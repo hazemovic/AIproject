@@ -19,9 +19,26 @@ public class SearchTreeNode {
 		this.cost = cost;
 	}
 	
+	
+	public String toString() {
+		if(parent != null) {
+			return "state :" + this.state
+					 + "\n" + "parent :" + "\n" + "{" + "\n" + this.parent + "\n" + "}"
+					 + "\n" + "operator :" + this.operator
+					 + "\n" + "depth :" + this.depth
+					 + "\n" + "cost :" + this.cost;
+		}
+		return "state :" + this.state
+			 + "\n" + "parent : Root" 
+			 + "\n" + "operator :" + this.operator
+			 + "\n" + "depth :" + this.depth
+			 + "\n" + "cost :" + this.cost;
+	}
+	
 	public static void main(String[] args) {
-		SearchTreeNode x = new SearchTreeNode("",null,"",1,1);
-		
+		SearchTreeNode x = new SearchTreeNode("(1,2)",null,"",1,1);
+		SearchTreeNode y = new SearchTreeNode("(1,3)",x,"",1,1);
+		System.out.println(y);
 	}
 	
 
